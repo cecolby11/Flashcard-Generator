@@ -8,11 +8,11 @@ function BasicCard(front,back){
 // Display 
 // ==========
 
-BasicCard.prototype.showFront = function(){
+BasicCard.prototype.displayFront = function(){
   console.log(this.front);
 }
 
-BasicCard.prototype.showBack = function() {
+BasicCard.prototype.displayBack = function() {
   console.log(this.back);
 }
 
