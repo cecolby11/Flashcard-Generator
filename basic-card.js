@@ -1,7 +1,7 @@
 // basic-card constructor
-function BasicCard(front,back){
-  this.front = front;
-  this.back = back;
+function BasicCard(dataObject){
+  this.front = dataObject.front;
+  this.back = dataObject.back;
 }
 
 // ==========

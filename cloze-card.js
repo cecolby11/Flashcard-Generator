@@ -1,9 +1,9 @@
 // cloze-card constructor
-function ClozeCard(text, cloze){
+function ClozeCard(dataObject){
   // full text - the entire sentence
-  this.fullText = text;
+  this.fullText = dataObject.fullText;
   // cloze deletion - the text to remove
-  this.clozeDeletion = cloze;
+  this.clozeDeletion = dataObject.cloze;
   // index of cloze in partial text (-1 if not found)
   this.clozeIndex = this.fullText.indexOf(this.clozeDeletion);
   // partial text - remaining text if cloze deletion removed from full text 

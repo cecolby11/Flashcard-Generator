@@ -1,0 +1,22 @@
+{
+  "data": [{
+    "cloze": "George Washington",
+    "fullText": "George Washington was the First President of the US",
+    "type": "cloze"
+  },
+  {
+    "cloze": "Thomas Jefferson",
+    "fullText": "Thomas Jefferson Was the Third President of the US",
+    "type": "cloze"
+  },
+  {
+    "cloze": "John Adams",
+    "fullText": "John Adams was the IDK President of the US",
+    "type": "cloze"
+  },
+  {
+    "front": "Color of the Sky",
+    "back": "Blue",
+    "type": "basic"
+  }]
+}
