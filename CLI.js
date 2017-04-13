@@ -85,9 +85,9 @@ var display = {
       type: 'list',
       message: 'What do you want to do?',
       name: 'continue',
-      choices: ['flip to front', 'next card']
+      choices: ['next card', 'repeat this card']
     }).then(function(userData){
-      if(userData.continue === 'flip to front') {
+      if(userData.continue === 'repeat this card') {
         display.displayFrontBasic(basicCard);
       } else {
         if (display.cardIndex < display.deck.length - 1){
@@ -102,6 +102,46 @@ var display = {
 
   displayCloze: function(clozeCard) {
     clozeCard.displayPartial();
+    inquirer.prompt({
+      type:'input',
+      message:'enter the exact missing text',
+      name: 'userGuess'
+    }).then(function(userData){
+      if(userData.userGuess.toLowerCase().trim() === clozeCard.clozeDeletion.toLowerCase()) {
+        console.log(color.bgGreen('Great Job!'));
+        clozeCard.displayFull();
+        // if next card, show next card 
+        if(display.cardIndex < display.deck.length - 1) {
+          display.continueToNextCloze();
+        } else {
+          display.endDeck();
+        }
+      } else {
+        console.log(color.bgRed('\nNope that\'s not quite right!\n'));
+        inquirer.prompt({
+          type: 'list',
+          message: 'What woud you like to do?',
+          choices: ['Try again', 'Next card'],
+          name: 'continue'
+        }).then(function(userData) {
+          if(userData.continue === 'Try again') {
+            display.displayCloze(clozeCard);
+          } else {
+            if (display.cardIndex < display.deck.length - 1) {
+              display.continueToNextCloze();
+            } else {
+              display.endDeck();
+            }
+          }
+        })
+      }
+    })
+  },
+
+  continueToNextCloze() {
+    display.cardIndex++;
+    console.log(color.bgMagenta('\nnext card\n'));
+    display.displayCloze(display.deck[display.cardIndex]);
   },
 
   endDeck: function() {
@@ -113,7 +153,8 @@ var display = {
     }).then(function(userData){
       if(userData.continue === true) {
         getDeckType();
-      }
+        display.cardIndex = 0;
+      } 
     })
   }
 
