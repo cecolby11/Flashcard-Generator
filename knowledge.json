@@ -18,5 +18,16 @@
     "front": "Color of the Sky",
     "back": "Blue",
     "type": "basic"
-  }]
+  },
+  {
+    "front": "Color of the Grass",
+    "back": "Green",
+    "type": "basic"
+  },
+  {
+    "front": "Color of the Clouds",
+    "back": "White",
+    "type": "basic"
+  }
+]
 }

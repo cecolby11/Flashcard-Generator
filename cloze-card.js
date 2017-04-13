@@ -1,4 +1,12 @@
-// cloze-card constructor
+// ==========
+// Libraries 
+// ==========
+var color = require('cli-color');
+
+// ===========
+// Constructor 
+// ===========
+
 function ClozeCard(dataObject){
   // full text - the entire sentence
   this.fullText = dataObject.fullText;
@@ -26,7 +34,7 @@ ClozeCard.prototype.generatePartialText = function() {
     var endIndex = this.clozeIndex + this.clozeDeletion.length;
     var substr2 =this.fullText.substring(endIndex);
 
-    var concat = substr1 + "..." + substr2;
+    var concat = substr1 + '...' + substr2;
     return concat;
   }
 }
@@ -37,12 +45,14 @@ ClozeCard.prototype.generatePartialText = function() {
 
 // this method displays an error if the cloze is not found in the fulltext  
 ClozeCard.prototype.displayError = function() {
-  console.log("Oops, that fragment wasn't found in the full text.")
+  console.log('Oops, that fragment wasn\'t found in the full text.')
 }
 
 // this method returns the full text
 ClozeCard.prototype.displayFull = function() {
+  console.log(color.bgGreen('\nfull text\n'));
   console.log(this.fullText);
+  console.log(color.bgGreen('\n\n'));
 }
 
 // this method returns only the cloze deletion 
@@ -52,7 +62,9 @@ ClozeCard.prototype.displayCloze = function() {
 
 // this method returns only the partial text 
 ClozeCard.prototype.displayPartial = function() {
+  console.log(color.bgYellow('\nfill in the missing text\n'));
   console.log(this.partialText);
+  console.log(color.bgYellow('\n\n'));
 }
 
 module.exports = {

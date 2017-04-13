@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cecolby11/Flashcard-Generator#readme",
   "dependencies": {
+    "cli-color": "^1.2.0",
     "inquirer": "^3.0.6"
   }
 }
