@@ -13,13 +13,13 @@ var flashcards = require('./flashcards.js');
 // ================
 // User Interaction
 // ================ 
-var deckTypes = ['Basic: Minimal Context, learn big picture','Cloze: Memorize Details'];
+var deckTypes = ['Basic: Learn big picture and vocab words','Cloze: Memorize Details'];
 var selectedDeck;
 
 function getDeckType() {
   inquirer.prompt({
     type: 'list',
-    message: 'Study time? Choose your review style.',
+    message: 'German time? Choose your review style.',
     choices: deckTypes,
     name: 'deckType'
   }).then(function(userData){
@@ -154,18 +154,13 @@ var display = {
       if(userData.continue === true) {
         getDeckType();
         display.cardIndex = 0;
-      } 
+      } else {
+        console.log(color.cyan('\n=== Goodbye! Good luck! Viel Glück! ===\n'))
+      }
     })
   }
 
 };
-
-
-// console.log(newBasic.front);
-// console.log(newCloze.partialText);
-// // the above should produce same output as: 
-// newBasic.displayFront();
-// newCloze.displayPartial();
 
 // =============
 // INITIALIZE
@@ -173,10 +168,3 @@ var display = {
 // read in the data, create the basic and cloze decks
 // pass it getDeckType() as the callback so when it's done it starts the displaying of cards! 
 flashcards.data.readData(getDeckType);
-
-
-
-// TODO: 
-// display to user one at a time
-// shuffle deck
-// basic cards: see front first or back first

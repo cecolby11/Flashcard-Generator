@@ -1,32 +1,47 @@
 {
   "data": [{
-    "cloze": "George Washington",
-    "fullText": "George Washington was the First President of the US",
+    "cloze": "esse",
+    "fullText": "Ich esse der Käse",
     "type": "cloze"
   },
   {
-    "cloze": "Thomas Jefferson",
-    "fullText": "Thomas Jefferson Was the Third President of the US",
+    "cloze": "der",
+    "fullText": "Ich esse der Käse",
     "type": "cloze"
   },
   {
-    "cloze": "John Adams",
-    "fullText": "John Adams was the IDK President of the US",
+    "cloze": "das",
+    "fullText": "Ich esse das Frühstück",
     "type": "cloze"
   },
   {
-    "front": "Color of the Sky",
-    "back": "Blue",
+    "cloze": "trinke",
+    "fullText": "Ich trinke das Wasser",
+    "type": "cloze"
+  },
+  {
+    "cloze": "die",
+    "fullText": "Ich trinke die Milch",
+    "type": "cloze"
+  },
+  {
+    "front": "der Käse",
+    "back": "The cheese",
     "type": "basic"
   },
   {
-    "front": "Color of the Grass",
-    "back": "Green",
+    "front": "The egg",
+    "back": "das Ei",
     "type": "basic"
   },
   {
-    "front": "Color of the Clouds",
-    "back": "White",
+    "front": "The breakfast",
+    "back": "das Frühstück",
+    "type": "basic"
+  },
+  {
+    "front": "The potatoes",
+    "back": "die Kartoffeln",
     "type": "basic"
   }
 ]
